@@ -48,8 +48,9 @@ const GLBViewer: React.FC = () => {
             style={{
                 border: '2px dashed #ccc',
                 borderRadius: '4px',
-                width: '100%',
-                height: '400px',
+                boxSizing: 'border-box',
+                width: 'calc(100% - 15px)',
+                height: 'calc(100% - 100px)',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -63,7 +64,7 @@ const GLBViewer: React.FC = () => {
                 <OrbitControls />
                 {droppedModel && <primitive object={droppedModel} />}
             </Canvas>
-            {!file && <p>Drag and drop a GLB file here</p>}
+            {!file && <p style={{position: "absolute", left: "auto"}}>Drag and drop a GLB file here</p>}
         </div>
     );
 };
